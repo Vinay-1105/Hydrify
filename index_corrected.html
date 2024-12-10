@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style_updated.css" />
+    <title>Drink Water</title>
+    <style>
+      body {
+          background-image: url('water.jpg');
+
+          background-size: 150%;
+
+          background-repeat: no-repeat; 
+          
+          background-size: cover; /* Scaling the image */
+
+          background-attachment: fixed; /* Making the image fixed or scroll with the content */
+      }
+  </style>
+  </head>
+  <body>
+    <div id="loading-screen">
+      <img src="water-droplet-logo.png" alt="Water Droplet Logo" class="loading-logo" />
+      <div class="loading-text">Loading</div>
+    </div>
+    <div id="main-content" style="display: none;">
+    </div> 
+    
+    <div id="logo">Hydrify</div>
+    <script type="text/javascript">
+      let myDate = new Date();
+      let myDay = myDate.getDay();
+
+      // Array of days. 
+      let weekday = ['Sunday', 'Monday', 'Tuesday',
+          'Wednesday', 'Thursday', 'Friday', 'Saturday'
+      ];
+      document.write("Today is : " + weekday[myDay]);
+      document.write("<br/>");
+
+      // get hour value. 
+      let hours = myDate.getHours();
+      let ampm = hours >= 12 ? 'PM' : 'AM';
+      hours = hours % 12;
+      hours = hours ? hours : 12;
+      let minutes = myDate.getMinutes();
+      minutes = minutes < 10 ? '0' + minutes : minutes;
+      let myTime = hours + " " + ampm + " : " + minutes +
+          " : " + myDate.getMilliseconds();
+      document.write("\tCurrent time is : " + myTime); 
+  </script>
+    <h1>Drink Water</h1>
+    <h3>Goal: 2 Liters</h3>
+
+    <div class="cup">
+      <div class="remained" id="remained">
+        <span id="liters"></span>
+        <small>Remained</small>
+      </div>
+
+      <div class="percentage" id="percentage"></div>
+    </div>
+
+    <p class="text">Select how many glasses of water that you have drank:</p>
+
+    <div class="cups">
+      <div class="cup cup-small">250 ml</div>
+      <div class="cup cup-small">250 ml</div>
+      <div class="cup cup-small">250 ml</div>
+      <div class="cup cup-small">250 ml</div>
+      <div class="cup cup-small">250 ml</div>
+      <div class="cup cup-small">250 ml</div>
+      <div class="cup cup-small">250 ml</div>
+      <div class="cup cup-small">250 ml</div>
+    </div>
+
+    <div id="quotes"></div>
+
+    <script src="script_updated.js"></script>
+  </body>
+</html>
